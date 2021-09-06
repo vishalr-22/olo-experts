@@ -1,0 +1,587 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-KyZXEAg3QhqLMpG8r+8fhAXLRk2vvoC2f3B09zVXn8CA5QIVfZOJ3BCsw2P0p/We" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-U1DAWAznBHeqEIlVSCgzq+c9gqGAJn5c/t99JyeKa9xxaYpSvHU5awsuZVVFIhvj"
+        crossorigin="anonymous"></script>
+    <title>Hire</title>
+    <link href='https://fonts.googleapis.com/css?family=Montserrat' rel='stylesheet'>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    
+    <style>
+        body {
+            font-family: 'Montserrat';
+            background-color: whitesmoke;
+        }
+
+        /* .nav-link{
+            color: white !important;
+            
+        } */
+        .nav-item {
+            display: block;
+            margin-left: 1%;
+            margin-right: 1%;
+            /* background-color: aqua; */
+            /* padding-left: 5%;
+            padding-right: 5%; */
+            width: 11rem;
+        }
+        .navbar-nav{
+            position: absolute;
+            left: 20%;
+        }
+        .middle {
+            transition: .5s ease;
+            opacity: 0;
+            position: absolute;
+            text-align: center;
+        }
+        .card:hover img {
+            opacity: 0.3;
+            transition: 500ms;
+            filter: brightness(50%);
+            /* background-color: rgb(0, 0, 0,0.4); */
+        }
+
+        .card:hover .middle {
+            opacity: 1;
+        }
+        .text {
+            color: black;
+            font-size: 125%;
+            padding: 5%;
+        }
+        .text span{
+            color: black;
+            font-size: 150%;
+            padding: 5%;
+
+        }
+        
+        .card1{
+            position: absolute;
+            left: 6%;
+            
+            
+        }
+        .card2{
+            position: absolute;
+            left: 29%;
+        }
+        .card3{
+            position: absolute;
+            left: 52%;
+        }
+        .card4{
+            position: absolute;
+            left: 75%;
+        }
+        .card-text{
+            
+            color: rgb(4, 4, 36);
+            font-weight: 600;
+        }
+        /*TESTIMONIALS*/
+        .testimonials{
+            display:flex;
+            justify-content:center;
+            align-items:center;
+            flex-direction:column;
+            width:100%;
+        }
+        .testimonial-heading{
+            letter-spacing:1px;
+            margin: 30px 0px;
+            padding: 10px 20px;
+            display: flex;
+            flex-direction:column;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .testimonial-heading h3 {
+            font-size: 36px;
+            font-weight: 500;
+            background-color: #202020;
+            color: #ffffff;
+            padding: 10px 20px;
+            border-radius: 12px;
+            font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+        }
+
+
+        .testimonial-heading span {
+            font-size: 1.6rem;
+            color: #252525;
+            margin-bottom: 10px;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+        }
+
+        .testimonial-box-container{
+            display:flex;
+            justify-content:center;
+            align-items: center;
+            flex-wrap: wrap;
+            width:100%;
+        }
+
+        .testimonial-box{
+            width:500px;
+            box-shadow:2px 2px 30px rgba(0,0,0,0.1);
+            background-color: #ffffff;
+            padding: 20px;
+            margin: 15px;
+            cursor: pointer;
+        }
+
+        .profile-img{
+            width:50px;
+            height:50px;
+            border-radius: 50%;
+            overflow:hidden;
+            margin-right:10px;
+        }
+
+        .profile-img img{
+            width:100%;
+            height: 100%;
+            object-fit:cover;
+            object-position: center;
+        }
+
+        .profile{
+            display: flex;
+            align-items: center;
+        }
+
+        .name-user{
+            display:flex;
+            flex-direction:column;
+        }
+
+        .name-user strong{
+            color: #3d3d3d;
+            font-size:1.1rem;
+            letter-spacing:0.5px;
+        }
+
+        .name-user span{
+            color:#979797;
+            font-size:0.8rem;
+        }
+
+        .reviews{
+            color: #f9d71c;
+            padding: 0px 0px 0px 250px;
+        }
+
+        .box-top{
+            display:flex;
+            justify-content:space-between;
+            align-items:center;
+            margin-bottom: 20px;
+        }
+
+        .client-comment p{
+            font-size: 0.9rem;
+            color:#4b4b4b;
+        }
+
+        .testimonial-box:hover{
+            transform: translateY(-10px);
+            transition: all ease 0.3s;
+        }
+
+        .img{
+            width:100%;
+            height:500px;
+        }
+
+        .client-comment {
+            font-size: 14px;
+        }
+
+        .service-box {
+            box-shadow: 2px 2px 30px rgba(0,0,0,0.1);
+            background-color: #ffffff;
+            cursor: pointer;
+            align-items: center;
+            display: flex;
+            width: 300px;
+            padding: 50px;
+            margin:auto;
+        }
+
+        .service-img {
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            overflow: hidden;
+            align-items:center;
+        }
+
+        .profile-img-logo {
+            width: 100px;
+            height: 100px;
+            border-radius: 50%;
+            overflow: hidden;
+            margin-right: 10px;
+        }
+        .logo{
+            padding:10px 0px 0px 0px;
+        }
+        .card-img-top{
+            width:200px;
+            height:200px;
+        }
+        /*FOOTER*/
+        .footer-clean 
+        {
+            padding:50px 0;
+            background-color:rgb(0, 0, 0);
+            color:#f5f5f5;
+            }
+
+            .footer-clean h3 {
+            margin-top:0;
+            margin-bottom:12px;
+            font-weight:bold;
+            font-size:16px;
+            }
+
+            .footer-clean ul {
+            padding:0;
+            list-style:none;
+            line-height:1.6;
+            font-size:14px;
+            margin-bottom:0;
+            }
+
+            .footer-clean ul a {
+            color:inherit;
+            text-decoration:none;
+            opacity:0.8;
+            }
+
+            .footer-clean ul a:hover {
+            opacity:1;
+            }
+
+            .footer-clean .item.social {
+            text-align:right;
+            }
+
+            .footer-clean .item.social > a {
+            font-size:24px;
+            width:40px;
+            height:40px;
+            line-height:40px;
+            display:inline-block;
+            text-align:center;
+            border-radius:50%;
+            border:1px solid rgb(255, 255, 255);
+            margin-left:10px;
+            margin-top:22px;
+            color:inherit;
+            opacity:0.75;
+            }
+
+            .footer-clean .item.social > a:hover {
+            opacity:1;
+            }
+
+            .footer-clean .copyright {
+            margin-top:14px;
+            margin-bottom:0;
+            font-size:13px;
+            opacity:0.6;
+            }
+            .home-logo{
+                position: absolute;
+                width: 120px;
+                height: 70px;
+                left:120px;
+            }
+    </style>
+</head>
+
+<body>
+    <!--NAVBAR-->
+    <div style="position: fixed; width: 100%; overflow: hidden; top: 0;z-index: 1;">
+        <nav class="navbar navbar-expand-md navbar-dark bg-dark ">
+            <div class="container-fluid">
+                <img src="images/logo.png" class="home-logo">
+                <a class="navbar-brand" href="#">OLO Experts</a>
+                
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                    data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
+                    aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                    <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                        <li class="nav-item" style="width: 5rem;">
+                            <a class="nav-link" href="main.html">HOME</a>
+                        </li>
+                        <li class="nav-item" style="width: 5rem;">
+                            <a class="nav-link" href="about.html">ABOUT</a>
+                        </li>
+                        <li class="nav-item" style="width: 7rem;">
+                            <a class="nav-link" href="contact.html">CONTACT</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="workers.html">WORK PROFILE</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="customers.html">USER PROFILE</a>
+                        </li>
+                        <li class="nav-item" style="width: 9rem;">
+                            <a class="nav-link" href="index.html" style="color: white">HIRE NOW</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+    </div>
+    <br>
+    <br>
+    <!--CAROUSEL-->
+    <div id="carouselExampleSlidesOnly" class="carousel slide" data-bs-ride="carousel">
+        <div class="carousel-inner">
+          <div class="carousel-item active">
+            <img src="images/c1.png" class="d-block w-100" alt="...">
+          </div>
+          <div class="carousel-item">
+            <img src="images/c2.png" class="d-block w-100" alt="...">
+          </div>
+          <div class="carousel-item">
+            <img src="images/c3.png" class="d-block w-100" alt="...">
+          </div>
+        </div>
+      </div>
+    <!------------------------------------------------------------------------------------------------>
+    <br>
+    <br>
+    <!--SERVICE BANNER-->
+    <div class="service-banner">
+        <div class="card1" style="width: 18rem;">
+            <img class="card-img-top" src="images/sb-1.png" alt="Card image cap">
+            <div class="card-body">
+              
+              <p class="card-text">"Expert Mechanic at your doorstep in 2 hrs"</p>
+              <a href="mechanics.html" class="btn btn-primary">MECHANICS</a>
+            </div>
+        </div>
+        <div class="card2" style="width: 18rem;">
+            <img class="card-img-top" src="images/sb-2.png" alt="Card image cap">
+            <div class="card-body">
+              
+              <p class="card-text">"Find certified drivers even in pandemic"</p>
+              <a href="driver.html" class="btn btn-primary">CAR DRIVERS</a>
+            </div>
+        </div>
+        <div class="card3" style="width: 18rem;">
+            <img class="card-img-top" src="images/sb-3.png" alt="Card image cap">
+            <div class="card-body">
+              
+              <p class="card-text">"Schedule electricians visit in a flash"</p>
+              <a href="electricians.html" class="btn btn-primary">ELECTRICIANS</a>
+            </div>
+        </div>
+        <div class="card4" style="width: 18rem;">
+            <img class="card-img-top" src="images/sb-4.png" alt="Card image cap">
+            <div class="card-body">
+              
+              <p class="card-text">"Customer safety - Expert's Priority"</p>
+              <a href="security.html" class="btn btn-primary">SECURITY</a>
+            </div>
+        </div>
+    </div>
+<!----TESTIMONIALS--------------------------------------------------------------------------------------------------------------->
+    <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+    <section id="testimonials">
+        <div class="testimonial-heading">
+            <h3>TESTIMONIALS</h3>
+        </div>
+
+        <div class="testimonial-box-container">
+            <div class="testimonial-box animate-bottom">
+                <div class="box-top">
+                    <div class="profile">
+                        <div class="profile-img">
+                            <img src="images/pi-1.jpg" />
+                        </div>
+                        <div class="name-user">
+                            <strong>Albert</strong>
+                            <span>@albert</span>
+                        </div>
+                        <div class="reviews">
+                            <i class="fa fa-star"></i>
+                            <i class="fa fa-star"></i>
+                            <i class="fa fa-star"></i>
+                            <i class="fa fa-star"></i>
+                            <i class="fa fa-star"></i>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="client-comment">Lorem Ipsum, sometimes referred to as 'lipsum', is the placeholder text used in design when creating content. It helps designers plan out where the content will sit, without needing to wait for the content to be written and approved. It originally comes from a Latin text, but to today's reader, it's seen as gibberish.</div>
+            </div>
+            <div class="testimonial-box animate-bottom">
+                <div class="box-top">
+                    <div class="profile">
+                        <div class="profile-img">
+                            <img src="images/pi-2.jpg" />
+                        </div>
+                        <div class="name-user">
+                            <strong>Daniel</strong>
+                            <span>@daniel</span>
+                        </div>
+                        <div class="reviews">
+                            <i class="fa fa-star"></i>
+                            <i class="fa fa-star"></i>
+                            <i class="fa fa-star"></i>
+                            <i class="fa fa-star"></i>
+                            
+                        </div>
+                    </div>
+                </div>
+
+                <div class="client-comment">Lorem Ipsum, sometimes referred to as 'lipsum', is the placeholder text used in design when creating content. It helps designers plan out where the content will sit, without needing to wait for the content to be written and approved. It originally comes from a Latin text, but to today's reader, it's seen as gibberish.</div>
+            </div>
+            <div class="testimonial-box animate-bottom">
+                <div class="box-top">
+                    <div class="profile">
+                        <div class="profile-img">
+                            <img src="images/pi-3.jpg" />
+                        </div>
+                        <div class="name-user">
+                            <strong>Jeromy</strong>
+                            <span>@jeromy</span>
+                        </div>
+                        <div class="reviews">
+                            <i class="fa fa-star"></i>
+                            <i class="fa fa-star"></i>
+                            <i class="fa fa-star"></i>
+                            
+                        </div>
+                    </div>
+                </div>
+
+                <div class="client-comment">Lorem Ipsum, sometimes referred to as 'lipsum', is the placeholder text used in design when creating content. It helps designers plan out where the content will sit, without needing to wait for the content to be written and approved. It originally comes from a Latin text, but to today's reader, it's seen as gibberish.</div>
+            </div>
+            <div class="testimonial-box animate-bottom">
+                <div class="box-top">
+                    <div class="profile">
+                        <div class="profile-img">
+                            <img src="images/pi-4.jpg" />
+                        </div>
+                        <div class="name-user">
+                            <strong>Berk</strong>
+                            <span>@berk</span>
+                        </div>
+                        <div class="reviews">
+                            <i class="fa fa-star"></i>
+                            <i class="fa fa-star"></i>
+                            <i class="fa fa-star"></i>
+                            <i class="fa fa-star"></i>
+                           
+                        </div>
+                    </div>
+                </div>
+
+                <div class="client-comment">Lorem Ipsum, sometimes referred to as 'lipsum', is the placeholder text used in design when creating content. It helps designers plan out where the content will sit, without needing to wait for the content to be written and approved. It originally comes from a Latin text, but to today's reader, it's seen as gibberish.</div>
+            </div>
+            <div class="testimonial-box animate-bottom">
+                <div class="box-top">
+                    <div class="profile">
+                        <div class="profile-img">
+                            <img src="images/pi-5.jpg" />
+                        </div>
+                        <div class="name-user">
+                            <strong>Nida</strong>
+                            <span>@nida</span>
+                        </div>
+                        <div class="reviews">
+                            <i class="fa fa-star"></i>
+                            <i class="fa fa-star"></i>
+                            <i class="fa fa-star"></i>
+                            <i class="fa fa-star"></i>
+                            <i class="fa fa-star"></i>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="client-comment">Lorem Ipsum, sometimes referred to as 'lipsum', is the placeholder text used in design when creating content. It helps designers plan out where the content will sit, without needing to wait for the content to be written and approved. It originally comes from a Latin text, but to today's reader, it's seen as gibberish.</div>
+            </div>
+            <div class="testimonial-box animate-bottom">
+                <div class="box-top">
+                    <div class="profile">
+                        <div class="profile-img">
+                            <img src="images/pi-6.jpg" />
+                        </div>
+                        <div class="name-user">
+                            <strong>Burak</strong>
+                            <span>@burak</span>
+                        </div>
+                        <div class="reviews">
+                            <i class="fa fa-star"></i>
+                            <i class="fa fa-star"></i>
+                            <i class="fa fa-star"></i>
+                            <i class="fa fa-star"></i>
+                            <i class="fa fa-star"></i>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="client-comment">Lorem Ipsum, sometimes referred to as 'lipsum', is the placeholder text used in design when creating content. It helps designers plan out where the content will sit, without needing to wait for the content to be written and approved. It originally comes from a Latin text, but to today's reader, it's seen as gibberish.</div>
+            </div>
+        </div>
+    </section>
+
+    <!--FOOTER-->
+    <div class="footer-clean">
+        <footer>
+            <div class="container">
+                <div class="row justify-content-center">
+                    <div class="col-sm-4 col-md-3 item">
+                        <h3>Services</h3>
+                        <ul>
+                            <li><a href="mechanics.html">Mechanics</a></li>
+                            <li><a href="driver.html">Car drivers</a></li>
+                            <li><a href="electricians.html">Electricians</a></li>
+                            <li><a href="security.html">Security</a></li>
+                        </ul>
+                    </div>
+                    <div class="col-sm-4 col-md-3 item">
+                        <h3>About</h3>
+                        <ul>
+                            <li><a href="#">Company</a></li>
+                            <li><a href="#">Team</a></li>
+                            <li><a href="#">Legacy</a></li>
+                        </ul>
+                    </div>
+                    <div class="col-sm-4 col-md-3 item">
+                        <h3>Careers</h3>
+                        <ul>
+                            <li><a href="#">Job openings</a></li>
+                            <li><a href="#">Employee success</a></li>
+                            <li><a href="#">Benefits</a></li>
+                        </ul>
+                    </div>
+                    <div class="col-lg-3 item social"><a href="#"><i class="fa fa-facebook-f"></i></a><a href="#"><i class="fa fa-twitter"></i></a><a href="#"><i class="fa fa-snapchat-ghost"></i></a><a href="#"><i class="fa fa-instagram"></i></a>
+                        <p class="copyright">Olo Experts @ 2021</p>
+                    </div>
+                </div>
+            </div>
+        </footer>
+    </div>
+    
